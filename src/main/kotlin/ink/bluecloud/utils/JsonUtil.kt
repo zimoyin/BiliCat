@@ -32,7 +32,7 @@ inline fun <T> Any.toJson(clazz: Class<T>): T {
  */
 inline fun <T> String.toObjJson(clazz: Class<T>): T {
     to(Code::class.java, this).let {
-        if (it.code != 0) throw CodeException(it.code, it.message)
+        if (it.code != 0) throw CodeException(it.code,this)
     }
 
     return to(clazz, this)
